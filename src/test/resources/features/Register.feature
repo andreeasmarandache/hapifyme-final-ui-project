@@ -12,7 +12,7 @@ Feature: Register to hapifyMe
     And the user enters email "random email"
     And the user enters password "random password"
     And the user presses the register button
-    Then the user should see an success message "You're all set! Go ahead and login! Please check your email to activate your account."
+    Then the user should see a success message "You're all set! Go ahead and login! Please check your email to activate your account."
 
   @regression @negative
   Scenario Outline: Register fails when a required field is missing

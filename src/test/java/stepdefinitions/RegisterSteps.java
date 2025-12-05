@@ -62,8 +62,8 @@ public class RegisterSteps {
         loginPage.clickRegisterButton();
     }
 
-    @Then("the user should see an success message {string}")
-    public void userShouldSeeAnSuccessMessage(String expectedMessage) {
+    @Then("the user should see a success message {string}")
+    public void userShouldSeeASuccessMessage(String expectedMessage) {
         loginPage.verifySuccessMessage(expectedMessage);
     }
 
@@ -74,7 +74,6 @@ public class RegisterSteps {
                 loginPage.getFirstInvalidField()
         );
 
-        // Validation message must exist
         assertTrue("Expected browser validation message, but got none!",
                 actualMessage != null && !actualMessage.isEmpty());
     }

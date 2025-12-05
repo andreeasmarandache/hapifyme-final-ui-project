@@ -15,6 +15,7 @@ public class HomePage {
     private By posts = By.cssSelector(".status_post");
     private By postBodyContent = By.cssSelector(".post_body_content");
     private By timestamp = By.cssSelector(".posted_by");
+    private By settingsButton = By.xpath("//a[@href='settings.php']");
 
     public void verifyHomepage() {
         $(postArea).shouldBe(visible);
@@ -34,6 +35,10 @@ public class HomePage {
 
     public void verifyFirstPostBody(String expectedBody) {
         $$(posts).first().$(postBodyContent).shouldHave(text(expectedBody));
+    }
+
+    public void clickSettingsButton() {
+        $(settingsButton).click();
     }
 
 
