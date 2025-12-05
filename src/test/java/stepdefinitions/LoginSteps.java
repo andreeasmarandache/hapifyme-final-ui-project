@@ -19,12 +19,12 @@ public class LoginSteps {
         open(url);
     }
 
-    @When("the user enters email {string}")
+    @When("the user enters email {string} to login")
     public void userEntersEmailToLogin(String email) {
         loginPage.enterEmailForLogin(email);
     }
 
-    @And("the user enters password {string}")
+    @And("the user enters password {string} to login")
     public void userEntersPasswordToLogin(String password) {
         loginPage.enterPasswordForLogin(password);
     }

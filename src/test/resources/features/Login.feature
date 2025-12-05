@@ -6,15 +6,15 @@ Feature: Login to hapifyMe
 
   @valid
   Scenario: Login successfully using valid credentials
-    When the user enters email "andreea.cristina86@yahoo.com"
-    And the user enters password "QAtest4#"
+    When the user enters email "andreea.cristina86@yahoo.com" to login
+    And the user enters password "QAtest4#" to login
     And the user presses the login button
     Then the user should be redirected to the homepage
 
   @regression @negative
   Scenario Outline: Login failed with invalid data
-    When the user enters email "<email>"
-    And the user enters password "<password>"
+    When the user enters email "<email>" to login
+    And the user enters password "<password>" to login
     And the user presses the login button
     Then the user should see an error message "<error_message>"
 

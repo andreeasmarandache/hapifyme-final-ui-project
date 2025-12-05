@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
@@ -78,6 +79,11 @@ public class LoginPage {
     public void verifySuccessMessage (String expectedMessage) {
         $(successMessage).shouldHave(text(expectedMessage));
     }
+
+    public SelenideElement getFirstInvalidField() {
+        return $("input:invalid");
+    }
+
 
 
 }
