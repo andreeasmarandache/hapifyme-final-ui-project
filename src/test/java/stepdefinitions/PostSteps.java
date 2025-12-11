@@ -8,22 +8,22 @@ import pages.HomePage;
 public class PostSteps {
 
     @When("the user enters a postBody {string}")
-    public void userEntersPostBody(String postBody) {
+    public void user_enters_post_body(String postBody) {
         homePage.enterPost(postBody);
     }
 
     @And("the user clicks on the post button")
-    public void userClicksPostButton() {
+    public void user_clicks_post_button() {
         homePage.clickPostButton();
     }
 
     @Then("the first post shows Just now")
-    public void firstPostJustNow() {
+    public void first_post_just_now() {
         homePage.verifyFirstPostJustNow();
     }
 
     @Then("the first post shows the correct body {string}")
-    public void firstPostHasBody(String body) {
+    public void first_post_has_body(String body) {
         homePage.verifyFirstPostBody(body);
     }
 

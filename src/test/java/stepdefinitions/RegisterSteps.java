@@ -16,12 +16,12 @@ public class RegisterSteps {
 
 
     @And("the user clicks on the register link")
-    public void userClicksOnRegisterLink(){
+    public void user_clicks_on_register_link(){
         loginPage.navigateToRegister();
     }
 
     @When("the user enters first name {string}")
-    public void userEntersFirstNameToReg(String value){
+    public void user_enters_first_name_to_reg(String value){
         if (value.equalsIgnoreCase("random name")) {
             loginPage.enterFirstName(TestData.randomNames());
         } else {
@@ -30,7 +30,7 @@ public class RegisterSteps {
     }
 
     @And("the user enters last name {string}")
-    public void userEntersLastNameToReg(String value){
+    public void user_enters_last_name_to_reg(String value){
         if (value.equalsIgnoreCase("random name")) {
             loginPage.enterLastName(TestData.randomNames());
         } else {
@@ -40,7 +40,7 @@ public class RegisterSteps {
 
 
     @And("the user enters email {string}")
-    public void userEntersEmailToReg(String value) {
+    public void user_enters_email_to_reg(String value) {
         if (value.equalsIgnoreCase("random email")) {
             loginPage.enterEmailForReg(TestData.randomEmail());
         } else {
@@ -49,7 +49,7 @@ public class RegisterSteps {
     }
 
     @And("the user enters password {string}")
-    public void userEntersPasswordToReg(String value) {
+    public void user_enters_password_to_reg(String value) {
         if (value.equalsIgnoreCase("random password")) {
             loginPage.enterPasswordForReg(TestData.randomPassword());
         } else {
@@ -58,17 +58,17 @@ public class RegisterSteps {
     }
 
     @And("the user presses the register button")
-    public void userClicksRegister() {
+    public void user_clicks_register() {
         loginPage.clickRegisterButton();
     }
 
     @Then("the user should see a success message {string}")
-    public void userShouldSeeASuccessMessage(String expectedMessage) {
+    public void use_should_see_success_message(String expectedMessage) {
         loginPage.verifySuccessMessage(expectedMessage);
     }
 
     @Then("the required field should show the browser validation message {string}")
-    public void requiredFieldShowsValidation(String ignored){
+    public void required_field_shows_validation(String ignored){
         String actualMessage = executeJavaScript(
                 "return arguments[0].validationMessage;",
                 loginPage.getFirstInvalidField()

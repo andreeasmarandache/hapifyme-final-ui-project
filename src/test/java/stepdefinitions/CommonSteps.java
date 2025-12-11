@@ -8,7 +8,7 @@ public class CommonSteps {
     LoginPage loginPage = new LoginPage();
 
     @Given("the user is logged into the application")
-    public void performBackgroundLogin() {
+    public void perform_background_login() {
         System.out.println("--- Background: Automatic Login is running ---");
 
         loginPage.openPage();

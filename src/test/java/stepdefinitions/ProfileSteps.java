@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,27 +16,22 @@ public class ProfileSteps {
     ProfilePage profilePage = new ProfilePage();
 
     @When("the user clicks on the settings button")
-    public void userClicksSettingsButton() {
+    public void user_clicks_settings_button() {
         homePage.clickSettingsButton();
     }
 
-    @And("the user updates first name {string}")
-    public void userUpdatesFirstName(String firstName) {
-        profilePage.updateFirstName(firstName);
-    }
-
-    @And("the user updates last name {string}")
-    public void userUpdatesLastName(String lastName) {
-        profilePage.updateLastName(lastName);
+    @And("the user updates the profile details:")
+    public void user_updates_profile_details(DataTable dataTable) {
+        profilePage.updateProfileDetails(dataTable);
     }
 
     @And("the user clicks on the update details button")
-    public void userClicksUpdateDetailsButton() {
+    public void user_clicks_update_details_button() {
         profilePage.clickUpdateDetailsButton();
     }
 
     @Then("the user should see the message {string}")
-    public void userGetsMessageForUpdatedProfile(String expectedMessage) {
+    public void user_gets_message_for_updated_profile(String expectedMessage) {
         $("body").shouldHave(text(expectedMessage));
     }
 
