@@ -16,6 +16,9 @@ public class HomePage {
     private By postBodyContent = By.cssSelector(".post_body_content");
     private By timestamp = By.cssSelector(".posted_by");
     private By settingsButton = By.xpath("//a[@href='settings.php']");
+    private By searchInput = By.id("search_text_input");
+    private By searchButton = By.cssSelector(".button_holder");
+    private By searchResult = By.cssSelector(".search_result");
 
     public void verifyHomepage() {
         $(postArea).shouldBe(visible);
@@ -41,6 +44,16 @@ public class HomePage {
         $(settingsButton).click();
     }
 
+    public void enterSearch(String searchBody) {
+        $(searchInput).setValue(searchBody);
+    }
 
+    public void clickSearchButton() {
+        $(searchButton).click();
+    }
+
+    public void verifySearchResult(String expectedBody) {
+        $(searchResult).shouldHave(text(expectedBody));
+    }
 
 }
