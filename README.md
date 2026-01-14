@@ -8,7 +8,7 @@ A Java-based **UI automation project** demonstrating automated testing for the H
 
 This project is part of my portfolio and showcases my skills in:
 
-- **UI test automation** using **Selenium WebDriver** (via Maven project)  
+- **UI test automation** using **Selenide** (via Maven project)  
 - Behavior-driven development (**BDD**) with **Cucumber**  
 - Page Object Model (POM) design pattern for maintainable tests  
 - Dynamic test data generation with a **TestData utility class**  
